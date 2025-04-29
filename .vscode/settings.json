@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/181a10b9-621a-4204-9949-66ceebb7222e/resourceGroups/appsvc_linux_mexicocentral/providers/Microsoft.Web/sites/my-api-learn",
+    "appService.deploySubpath": "."
+}
