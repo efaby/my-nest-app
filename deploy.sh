@@ -1,15 +1,20 @@
-bash#!/bin/bash
+#!/bin/bash
 
 echo "Starting deployment..."
 
 echo "Installing pnpm locally..."
-npm install pnpm --no-global
+npm install pnpm --save-dev
+
+echo "Verifying pnpm installation location..."
+ls -la node_modules/.bin/
+# The path might be slightly different - we need to check where it is
 
 echo "Installing dependencies using local pnpm..."
-./node_modules/.bin/pnpm install --frozen-lockfile
+# Use npx to run pnpm, which will find it regardless of exact path
+npx pnpm install --frozen-lockfile
 
 echo "Building application..."
-./node_modules/.bin/pnpm nx build your-app --prod
+npx pnpm nx build your-app --prod
 
 echo "Copying build output..."
 cp -r dist/apps/your-app/* $DEPLOYMENT_TARGET/
