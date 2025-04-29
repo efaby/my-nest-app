@@ -14,9 +14,9 @@ echo "Installing dependencies using local pnpm..."
 npx pnpm install --frozen-lockfile
 
 echo "Building application..."
-npx pnpm nx build your-app --prod
+npx pnpm nx build api --prod
 
 echo "Copying build output..."
-cp -r dist/apps/your-app/* $DEPLOYMENT_TARGET/
+cp -r dist/apps/api/* $DEPLOYMENT_TARGET/
 
 echo "Deployment completed."
