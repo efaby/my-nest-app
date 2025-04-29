@@ -19,4 +19,6 @@ npx pnpm nx build api --prod
 echo "Copying build output..."
 cp -r dist/apps/api/* $DEPLOYMENT_TARGET/
 
+node dist/apps/api/main.js
+
 echo "Deployment completed."
