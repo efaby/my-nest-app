@@ -34,7 +34,7 @@ jobs:
         with:
           appSourcePath: ${{ github.workspace }}
           dockerfilePath: apps/api/Dockerfile # Update this to the correct Dockerfile path
-          registryUrl: <your-registry-url> # e.g., myregistry.azurecr.io
+          registryUrl: ghcr.io # e.g., myregistry.azurecr.io
           registryUsername: ${{ secrets.MYCONTAINER_REGISTRY_USERNAME }}
           registryPassword: ${{ secrets.MYCONTAINER_REGISTRY_PASSWORD }}
           containerAppName: my-container
