@@ -56,5 +56,6 @@ jobs:
           registryPassword: ${{ secrets.GITHUB_TOKEN }}
           containerAppName: my-container
           resourceGroup: appsvc_linux_mexicocentral
+          imageToBuild: ghcr.io/${{ secrets.GH_USER }}/my-nest-app:latest
           buildArguments: |
             NODE_ENV=production
