@@ -1,13 +1,17 @@
-#!/bin/bash
+bash#!/bin/bash
 
-# Install pnpm
-npm install -g pnpm
+echo "Starting deployment..."
 
-# Install dependencies
-pnpm install --frozen-lockfile
+echo "Installing pnpm locally..."
+npm install pnpm --no-global
 
-# Build the application
-pnpm nx build your-app --prod
+echo "Installing dependencies using local pnpm..."
+./node_modules/.bin/pnpm install --frozen-lockfile
 
-# Copy build output to deployment folder
+echo "Building application..."
+./node_modules/.bin/pnpm nx build your-app --prod
+
+echo "Copying build output..."
 cp -r dist/apps/your-app/* $DEPLOYMENT_TARGET/
+
+echo "Deployment completed."
