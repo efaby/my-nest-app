@@ -53,7 +53,7 @@ jobs:
           dockerfilePath: apps/api/Dockerfile # Update this to the correct Dockerfile path
           registryUrl: ghcr.io # e.g., myregistry.azurecr.io
           registryUsername: ${{ vars.GH_USER }}
-          registryPassword: ${{ secrets.GITHUB_TOKEN }}
+          registryPassword: ${{ secrets.MY_TOKEN }}
           containerAppName: my-container
           resourceGroup: appsvc_linux_mexicocentral
           imageToBuild: ghcr.io/${{ vars.GH_USER }}/my-nest-app:latest
