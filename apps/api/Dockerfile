@@ -32,7 +32,7 @@ COPY --from=builder /usr/src/app/pnpm-lock.yaml ./pnpm-lock.yaml
 COPY --from=builder /usr/src/app/node_modules ./node_modules
 
 # Expose the application port
-ENV PORT 8080
+EXPOSE 80
 
 # Start the application
 CMD ["node", "dist/apps/api/main.js"]
